@@ -24,9 +24,9 @@ Since the official Polestar App does not support any kind of widgets for iOS, I 
 2. There are two options to install the widget:
     - [Recommended] Click on the following button to install via `ScriptDude` (make sure that you have followed step 3 of [Prerequisites](./README.md#Prerequisites)). ScriptDude will automatically receive updates of new versions of this widget
 
-        [![Download with ScriptDude](https://scriptdu.de/download.svg)](https://scriptdu.de?name=Polestar%20Small%20SoC%20Widget&source=https%3A%2F%2Fgist.githubusercontent.com%2Fniklasvieth%2Fa45f6e33c117421deb4611e73ad83651%2Fraw%2Fb959e6a0bc2d31b2b455dd5543daf5c458a2d275%2Fpolestar-small-widget.js&docs=https%3A%2F%2Fgithub.com%2Fniklasvieth%2Fpolestar-ios-small-widget%2Fblob%2Fmain%2FREADME.md)
+        [![Download with ScriptDude](https://scriptdu.de/download.svg)](https://scriptdu.de?name=Polestar%20Small%20SoC%20Widget&source=https%3A%2F%2Fraw.githubusercontent.com%2Fvanderboon%2Fpolestar-ios-small-widget%2Fmain%2Fpolestar-small-widget.js&docs=https%3A%2F%2Fgithub.com%2Fvanderboon%2Fpolestar-ios-small-widget%2Fblob%2Fmain%2FREADME.md)
 
-    - Copy the content of [polestar-small-widget.js](https://gist.github.com/niklasvieth/159c13dd7ef94bd608358ce964b66c7c), create a new script in `Scriptable`, paste the content and rename it to `Polestar Small SoC Widget`.
+    - Copy the content of [polestar-small-widget.js](https://raw.githubusercontent.com/vanderboon/polestar-ios-small-widget/main/polestar-small-widget.js), create a new script in `Scriptable`, paste the content and rename it to `Polestar Small SoC Widget`.
 
 3. Replace the placeholder values for `POLESTAR_EMAIL` and `POLESTAR_PASSWORD` with your Polestar login credentials.
 
@@ -72,11 +72,5 @@ const DARK_MODE = true // false
 ### Appreciation
 
 - Thanks @simonbs for the awesome [Scriptable](https://scriptable.app/) app.
-
-### Support me
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/niklasvieth)
-
-<a href="https://www.paypal.me/niklasvieth" >
-  <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="200px" />
+- Thanks @niklasvieth for the [base widget](https://github.com/niklasvieth/polestar-ios-small-widget)
 </a>
