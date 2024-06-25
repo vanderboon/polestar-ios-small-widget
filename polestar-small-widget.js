@@ -207,7 +207,8 @@ async function createPolestarWidget(batteryData, odometerData, vehicle) {
   lastSeenElement.textColor = DARK_MODE ? Color.white() : Color.black();
   lastSeenElement.minimumScaleFactor = 0.7;
 
-  if (0 <= batteryPercent <= NOTIFY_CHARGE_LEVEL >= 0) {
+  //Notifications
+  if (batteryPercent >= 0 && batteryPercent <= NOTIFY_CHARGE_LEVEL) {
     notify(title, `Charge is at ${batteryPercent}%`);
   }
   
