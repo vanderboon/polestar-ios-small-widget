@@ -15,11 +15,15 @@ let VEHICLE_NAME;
 // let VEHICLE_NAME = "Polestar Custom Name";
 
 // Additional optional configuration
-const IMAGE_ANGLE = "5"; // Possible values 0,1,2,3,4,5
+const IMAGE_ANGLE = "0"; // Possible values 0,1,2,3,4,5
 const RANGE_IN_MILES = false; // true
 const LAST_SEEN_RELATIVE_DATE = false; // true
 const MIN_SOC_GREEN = 60;
 const MIN_SOC_ORANGE = 30;
+const NOTIFY_CHARGE_COMPLETE = true; // false
+const NOTIFY_CHARGE_CONNECTED = true; // false
+const NOTIFY_CHARGE_CHARGING = true; // false
+const NOTIFY_CHARGE_LEVEL = 20; // 0-100
 
 const DARK_MODE = Device.isUsingDarkAppearance(); // or set manually to (true or false)
 const DARK_BG_COLOR = "000000";
@@ -202,6 +206,14 @@ async function createPolestarWidget(batteryData, odometerData, vehicle) {
   lastSeenElement.textOpacity = 0.5;
   lastSeenElement.textColor = DARK_MODE ? Color.white() : Color.black();
   lastSeenElement.minimumScaleFactor = 0.7;
+
+  if (0 <= batteryPercent <= NOTIFY_CHARGE_LEVEL >= 0) {
+    notify(title, `Charge is at ${batteryPercent}%`);
+  }
+  
+  if (isCharging && NOTIFY_CHARGE_CHARGING) {
+    notify(title, `Charging, currently ${batteryPercent}%`);
+  }
 
   return widget;
 }
@@ -422,4 +434,16 @@ function getBatteryIcon(
     icon = SFSymbol.named(`battery.${percentRounded}`);
   }
   return { batteryIcon: icon, batteryIconColor: iconColor };
+}
+
+/*****************
+* Notifications
+*****************/
+function notify (
+  title,
+  message) {
+  let notification = new Notification();
+  notification.title = `${title}`;
+  notification.body = `${message}`;
+  notification.schedule();
 }
